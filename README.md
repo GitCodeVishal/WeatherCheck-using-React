@@ -1,1 +1,1 @@
-# WeatherCheck-using-React
+In this project, I am recreating the Weather App using React.js, building upon the foundation of the original app developed with vanilla JavaScript. This iteration aims to leverage the capabilities of React.js to enhance the user interface and overall functionality.
