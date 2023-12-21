@@ -1,29 +1,33 @@
-import React from 'react'
-import Clouds from './images/clouds.png'
-import Humidity from './images/humidity.png'
-import Wind from './images/wind.png'
+import React from 'react';
+import Clouds from './images/clouds.png';
+import Humidity from './images/humidity.png';
+import Wind from './images/wind.png';
 
-
-const WeatherInfo = () => {
+const WeatherInfo = ({ data, error }) => {
   return (
-    <div className='WeatherInfo' >
-        <img src={Clouds}/>
-        <p>12°c</p>
-        <p>Delhi</p>
-        <div className='Humidity-Wind' >
-            <img src={Humidity}/>
+    <>
+      {error && <p>{error}</p>}
+      {!error && (
+        <div className='WeatherInfo'>
+          <img src={Clouds} alt='Clouds' />
+          <p>{data.main.temp}</p>
+          <p>{data.name}</p>
+          <div className='Humidity-Wind'>
+            <img src={Humidity} alt='Humidity' />
             <div className='Humidity_details'>
-                <p>94%</p>
-                <p>Humidity</p>
+              <p>%</p>
+              <p>Humidity</p>
             </div>
-            <img src={Wind}/>
+            <img src={Wind} alt='Wind' />
             <div className='Wind_details'>
-                <p>2 km/h</p>
-                <p>Wind</p>
+              <p>2 km/h</p>
+              <p>Wind</p>
             </div>
+          </div>
         </div>
-    </div>
-  )
-}
+      )}
+    </>
+  );
+};
 
-export default WeatherInfo
+export default WeatherInfo;
