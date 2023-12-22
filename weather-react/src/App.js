@@ -13,7 +13,13 @@ function App() {
   const checkWeather = async () => {
     try {
       const response = await fetch(`${apiUrl}${city}&appid=${apiKey}`);
-      if (!response.ok) throw Error('Failed to fetch data');
+      if (!response.ok) {
+      if (response.status === 404) { 
+        throw Error('Invalid City Name');
+      }else { 
+        throw Error('Failded to fetch data');
+      }
+    }
       const info = await response.json();
       console.log(info);
       setData(info);

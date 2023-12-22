@@ -4,10 +4,10 @@ import searchIcon from './images/search.png'
 const Search = ({setCity , handleSubmit}) => {
   return (
     <div className='Search'  >
-       <form className='searchForm' onSubmit={handleSubmit} >
+       <form onSubmit={handleSubmit} >
         <input
-        className='searchINput'
         autoFocus
+        spellCheck='false'
         type='text'
         placeholder='Enter City Name'
         required
