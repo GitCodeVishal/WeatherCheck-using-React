@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
 *{
   margin: 0;
   padding: 0;
@@ -24,7 +26,6 @@
     align-items: center;
     justify-content: space-between;
 }
-
 
 .Search form input{
   border: 0;
@@ -53,8 +54,6 @@
     position: relative;
     bottom: 1px;
     left: 20px;
-    
-    
 }
 
 .Search form button img{
@@ -67,9 +66,40 @@
 
 }
 
+.random{
+  position: relative;
+  bottom: 10px;
+}
 
+.temp{
+font-size: 45px;
+position: relative;
+bottom: 25px;
+font-weight: bold ;
+}
+ 
+.name{
+  font-size: 30px;
+  font-weight:600;
+  position: relative;
+  bottom: 20px;
+}
 
 .Humidity-Wind{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: end;
 }
+
+.Humidity_details{
+  position: relative;
+  right: 10px;
+  font-size: 18px;
+}
+
+.Wind_details{
+  position: relative;
+  right: 5px;
+  font-size: 18px;
+}
+

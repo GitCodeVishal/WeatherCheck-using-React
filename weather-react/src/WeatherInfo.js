@@ -7,10 +7,13 @@ import Drizzle from './images/drizzle.png';
 import Mist from './images/mist.png';
 import Rain from './images/rain.png';
 import Snow from './images/snow.png';
+import Fog from './images/fog.png';
 
 const WeatherInfo = ({ data, error }) => {
 
-    const weatherCondition = data?.weather[0]?.main.toLowerCase();
+    const weatherCondition = data.weather[0].main.toLowerCase();
+
+    console.log('weatherCondition:', weatherCondition);
 
     const weatherIcons = {
         clouds: Clouds,
@@ -18,7 +21,8 @@ const WeatherInfo = ({ data, error }) => {
         drizzle: Drizzle,
         mist: Mist,
         rain: Rain,
-        snow: Snow
+        snow: Snow,
+        fog:Fog
     }
 
   return (
@@ -26,9 +30,9 @@ const WeatherInfo = ({ data, error }) => {
       {error && <p className='error'>{error}</p>}
       {!error && (
         <div className='WeatherInfo'>
-           <img src={weatherIcons.weatherCondition} alt={weatherCondition} />
-          <p>{data.main.temp}</p>
-          <p>{data.name}</p>
+          <img src={weatherIcons[weatherCondition]} alt={weatherCondition} className='random' />
+            <p className='temp'>{`${data.main.temp} °C`}</p>
+          <p className='name'>{data.name}</p>
            <div className='Humidity-Wind'>
             <img src={Humidity} alt='Humidity' />
             <div className='Humidity_details'>
